@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+tuvan:
+  artist_name: Gaia
+  track_title: Tuvan
+  station: trance
+
+alive:
+  track_title: Alive
+  station: trance
+
+heatbeat:
+  artist_name: heatbeat
+  station: trance
+
+beautiful:
+  artist_name: Ferry Corsten
+  track_title: Beautiful
