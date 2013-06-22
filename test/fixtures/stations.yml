@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+trance:
+  title: Trance
+  stream_url: http://di.radio/trance.trance.mp3s
+
+untitled:
+  stream_url: stuff
+
+vocal:
+  title: Vocal Trance
+  stream_url: http://di.radio/vocal.trance.mp3s
+
+techno:
+  title: Techno
+  stream_url: http://di.radio/techno.mp3s
+ 
+no_stream:
+  title: No Stream URL
