@@ -4,4 +4,6 @@ class Station < ActiveRecord::Base
   validates :title, presence: true
   validates :stream_url, presence: true
 
+  has_many :songs, :dependent=>:destroy
+
 end
