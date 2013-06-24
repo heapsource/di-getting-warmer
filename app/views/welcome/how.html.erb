@@ -1,0 +1,17 @@
+<p class="lead">This is how Getting Warmer works.</p>
+<img src="<%= asset_path 'how-it-works.png' %>">
+<p>This app extracts metadata frames directly from the Icecast Stream using the Icy metadata. Audio frames are ignored.</p>
+<ul>
+  <li>
+    A worker crawls the radio stream directly from IceCast server, and ignoring the audio frames, notify every non-empty metadata via AMQP. We've choosen go-lang for this tier for it's efficient IO and Concurrency model.
+  </li>
+  <li>
+  The middleware tier is a AMQP queue server. We've choosen RabbitMQ because we like it's architecture(Exchanges<->Queue) and we trust Erlang.
+  </li>
+  <li>
+    A persistence worker shares the data tier with the server and receives the metadata via AMQP. This was pretty straightforward to implement thanks to our own <a href="https://github.com/heapsource/background_bunnies">gems</a> that makes extremely easy to create background workers using AMQP.
+    </li>
+    <li>
+    Our web tier uses Ruby on Rails, we love Rails. One of our developers is part of Rails core team.
+  </li>
+</ul>

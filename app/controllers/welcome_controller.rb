@@ -4,4 +4,8 @@ class WelcomeController < ApplicationController
     @songs = Song.order('created_at desc')
   end
 
+  def how
+    
+  end
+
 end

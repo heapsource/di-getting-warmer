@@ -11,7 +11,7 @@ jQuery(document).ready(function documentReady() {
   </script>
 <% end %>
 <p class="lead">Here you will see What's playing on some DI radio Stations</p>
-<p>This app extracts metadata frames directly from the Icecast Stream using the Icy metadata. Audio frames are ignored.</p>
+<p>This app extracts metadata frames directly from the Icecast Stream using the Icy metadata. Audio frames are ignored. <%= link_to 'Learn how it works.', how_path -%></p>
 
 <ul class="recent-posts">
   <% @songs.each do |song| %>
