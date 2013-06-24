@@ -1,0 +1,32 @@
+<% content_for :scripts do %>
+  <script type="text/javascript">
+jQuery(document).ready(function documentReady() {
+      jQuery(".timeago").timeago();
+      jQuery('.song_info').click(function(event) {
+        alert("show song info");
+        event.preventDefault();
+        return false;
+      });
+    });
+  </script>
+<% end %>
+<p class="lead">Here you will see What's playing on some DI radio Stations</p>
+<p>This app extracts metadata frames directly from the Icecast Stream using the Icy metadata. Audio frames are ignored.</p>
+
+<ul class="recent-posts">
+  <% @songs.each do |song| %>
+    <li>
+      <div class="user-thumb">
+        <img width="40" height="40" alt="Song" src="<%= asset_path 'melody.png' %>">
+      </div>
+      <div class="article-post">
+        <span class="user-info"><%= song.station.title -%></span>
+        <p>
+        <a class="song_info"><%= song.track_title -%> <%= song.artist_name -%></a>
+        <span class="user-info timeago" title="<%= song.created_at.utc.iso8601 -%>"><%= song.station.title -%></span>
+        </p>
+      </div>
+    </li>
+  <% end %>
+</ul>
+

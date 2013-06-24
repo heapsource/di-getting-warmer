@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>GettingWarmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+
+      </style>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <!-- Part 1: Wrap all page content here -->
+       <div id="wrap">
 
-<%= yield %>
-
+         <!-- Begin page content -->
+         <div class="container">
+           <div class="page-header">
+             <h1>Getting Warmer for DI</h1>
+           </div>
+         
+		   <%= yield %>
+         </div>
+         <div id="push"></div>
+       </div>
+       <div id="footer">
+         <div class="container">
+           <p class="muted credit">Created in a Weekend by <a href="http://www.heapsource.com">Johan</a> from <a href="http://www.heapsource.com">Heapsource.com</a>.</p>
+         </div>
+       </div>
+  <%= javascript_include_tag "application" %>
+		   <%= yield :scripts %>
 </body>
 </html>
